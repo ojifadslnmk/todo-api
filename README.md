@@ -19,6 +19,7 @@ TECH STACK
 
 PROJECT STRUCTURE
 
+```
 app/
  ├── api/
  │    ├── deps.py
@@ -37,6 +38,7 @@ app/
  ├── services/
  │    └── todo_service.py
  └── main.py
+ ```
 
 The project follows a layered architecture:
 
@@ -53,11 +55,13 @@ SETUP INSTRUCTIONS
 Clone the repository:
 
 git clone https://github.com/ojifadslnmk/todo-api.git
+
 cd todo-api
 
 Create and activate a virtual environment:
 
 python -m venv venv
+
 venv\Scripts\activate
 
 Install dependencies:
