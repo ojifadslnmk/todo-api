@@ -20,6 +20,16 @@ def read_todos(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
     }
 
 
+@router.get("/stats", response_model=APIResponse[dict])
+def get_stats(db: Session = Depends(get_db)):
+    stats = todo_service.get_todo_stats(db)
+    return {
+        "success": True,
+        "data": stats,
+        "message": "Todo statistics retrieved successfully"
+    }
+
+
 @router.get("/{todo_id}", response_model=APIResponse[TodoResponse])
 def read_todo(todo_id: int, db: Session = Depends(get_db)):
     todo = todo_service.get_todo(db, todo_id)
